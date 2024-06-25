@@ -1,0 +1,22 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: linepay
+logging:
+  level:
+    root: info
+    org.springframework.boot.autoconfigure: info
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+#    file: "%d %p %c{1.} [%t] %m%n"
+#  file: app.log
+Linepay:
+  url:
+    base: https://sandbox-api-pay.line.me
+    request: /v3/payments/request
+    confirm: /v3/payments/{transactionId}/confirm
+    checkPaymentStatus: /v3/payments/{transactionId}/check
+    refund: /v3/payments/{transactionId}/refund
+  channelId: ??
+  channelSecret: ??

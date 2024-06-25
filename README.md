@@ -1,15 +1,19 @@
 # LINE Pay
 由spring boot 開發的 LINE Pay 串接程式
-先從linpay官網創建 sandbox帳號
+
+先從[linpay官網](https://pay.line.me/jp/developers/techsupport/sandbox/testflow?locale=zh_TW)創建 sandbox帳號
 從其中取得channelId 與 channelSecret
-https://pay.line.me/jp/developers/techsupport/sandbox/testflow?locale=zh_TW
+
 # setting
 src\main\resources\application.yml
-設定 channelId 與 channelSecret
+設定 `channelId` 與 `channelSecret`
 
 # 發送請求
-Post https://localhost:8082/linepay/request
+Post `https://localhost:8082/linepay/request`
+
 body
+
+```JavaScript
 {
     "amount": 1640,
     "orderId": "20240625000000000001",
@@ -49,3 +53,4 @@ body
         "confirmUrl": "設置操作完成時返回的網址"
     }
 }
+```
